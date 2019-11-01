@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login/Sign Up</title>
+	<style type="text/css">
+		#message
+		{
+			background-color: yellow;
+			text-align: center;
+			font-family: Calibri;
+		}
+	</style>
+</head>
+<body>
+		<h1>Sign Up</h1>
+		<form action="signup.php" method="post">
+		<label>Username:</label><input type="text" name="username">
+		<p>Password: <input type="password" name="password" id="password" onkeyup="check();"></p>
+		<p>Confirm Password: <input type="password" name="confirm_password" id="confirm_password" onkeyup="check();"></p>
+		<p><input type="submit" name="Submit" value="Submit"></p>
+	</form>
+	<h3 id="message"></h3>
+	<script type="text/javascript">
+		var check = function() 
+		{
+		  	if (document.getElementById('password').value ==
+		    document.getElementById('confirm_password').value) 
+		    {
+		    	document.getElementById('message').style.color='green';
+		    	document.getElementById('message').innerHTML='Matching';
+		  	} 
+		  else 
+		  {
+		  	  document.getElementById('message').style.color='red';
+		    document.getElementById('message').innerHTML='Not matching';
+		  }
+		}
+	</script>
+</body>
+</html>

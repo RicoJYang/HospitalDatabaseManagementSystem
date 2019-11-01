@@ -1,0 +1,97 @@
+create table patient(
+patient_id varchar(25) primary key,
+name varchar(25) not null,
+address varchar(100) not null,
+DOB date not null,
+location varchar(100) not null,
+DeptNo varchar(25) not null,
+Blood_group varchar(5));
+
+create table Department(
+dep_name varchar(25) not null,
+dep_loc varchar(25) not null,
+dep_no int(25) primary key);
+
+create table Room(
+room_no int(25) primary key,
+status varchar(25)
+);
+
+create table Employee(
+Emp_id varchar(25) primary key, 
+Name varchar(25) not null, 
+Address varchar(100) not null, 
+DOB date not null, 
+Contact varchar(25) not null, 
+Gender char(1) not null, 
+Salary int(15) not null, 
+Designation varchar(25) not null,
+Dept_No int(25) references Department(dep_no));
+
+create table doctor(
+Doc_name varchar(25),
+doc_id varchar(25) not null unique,
+foreign key (doc_id) references employee(Emp_id) on delete cascade,
+spec varchar(25));
+
+
+create table Accompanies(
+Patient_id varchar(25) not null, 
+acc_name varchar(25), 
+Address varchar(100), 
+acc_DOB date, 
+Contact varchar(25), 
+Gender char(1), 
+Relationship varchar(25),
+primary key(acc_name, patient_id),
+foreign key(patient_id) references patient(patient_id) on delete cascade);
+
+create table medical_report(
+Patient_id varchar(25) not null, 
+Report_No varchar(25) primary key,
+Admission date not null,
+Discharge date, 
+Room_No varchar(25) not null, 
+Diet varchar(10) not null,
+Payment int(15) not null,
+foreign key(patient_id) references patient(patient_id) on delete cascade);
+
+create table Attended_By(
+patient_id varchar(25) not null,
+batch_no varchar(25) not null,
+doa date not null,
+primary key(patient_id, batch_no));
+
+create table room_allotment_history(
+room_no varchar(10) not null,
+patient_id varchar(25) not null,
+allot_date date not null,
+discharge_date date,
+primary key(patient_id, room_no, allot_date));
+
+create table login(
+username varchar(25) primary key,
+password varchar(25) not null,
+foreign key (username) references employee(Emp_id) on delete cascade);
+
+create table details(
+Dep_no int(25) not null,
+Report_No varchar(25) not null,
+primary key(Dep_no,Report_No),
+foreign key(Report_No) references medical_report(Report_No) on delete cascade,
+foreign key(Dep_no) references Department(dep_no) on delete cascade);
+
+
+patient Aditya M, Sneha, Shivang 
+department Gen, ICU 
+room 101,102,103,201,202
+employee 
+doctor
+accompanies
+medical_report
+attended_by
+give_details
+login
+room given
+
+
