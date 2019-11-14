@@ -11,7 +11,7 @@
 		{
     		die('Could not connect: ' . mysqli_error($con));
 		}
-		$user_info="INSERT INTO login VALUES('$_POST[username]','$_POST[password]')";
+		$user_info="INSERT INTO login VALUES('$_POST[username]','$_POST[password]','$_POST[type]')";
 		if(!mysqli_query($con,$user_info))
 		{
 			die('Could not upload data: ' . mysqli_error($con));

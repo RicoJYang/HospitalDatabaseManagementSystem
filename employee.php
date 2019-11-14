@@ -12,7 +12,7 @@
 <body>
 	<h1>Employee Records</h1>
 	<form action="employee.php" method="post">
-		<input type="text" placeholder="Search by name..." name="searchbox" id="searchbox" onkeyup="look()">
+		<input type="text" placeholder="Search by Name..." name="searchbox" id="searchbox" onkeyup="look()">
 	</form>
 	<br>
 	<?php
@@ -33,10 +33,10 @@
 		mysqli_close($con);
 	?>
 	<br>
-	<button onclick="location.href='view.html';">Back</button>
+	<button onclick="goback()">Back</button>
 	<br>
 	<br>
-	<button onclick="location.href='home.html';">Back to Home Page</button>
+	<button onclick="location.href='home.php';">Back to Home Page</button>
 	<script type="text/javascript">
 		var look=function()
 		{
@@ -65,6 +65,10 @@
 					}
 			}
 			
+		}
+		var goback=function()
+		{
+			window.history.back();
 		}
 		
 	</script>

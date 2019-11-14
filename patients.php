@@ -12,8 +12,11 @@
 <body>
 	<h1>Patient Admission Records</h1>
 	<form action="patients.php" method="post">
-		<input type="text" placeholder="Search by name..." name="searchbox" id="searchbox" onkeyup="look()">
+		<input type="text" placeholder="Search by Name..." name="searchbox" id="searchbox" onkeyup="look()">
 	</form>
+	<br>
+	<button onload="checkhist();" onclick="location.href='addpatient.html';" id="admin">Admit Patient</button>
+	<br>
 	<br>
 	<?php
 		$con=mysqli_connect('localhost','root','aditya2000','hospital');
@@ -33,10 +36,10 @@
 		mysqli_close($con);
 	?>
 	<br>
-	<button onclick="location.href='view.html';">Back</button>
+	<button onclick="goback();">Back</button>
 	<br>
 	<br>
-	<button onclick="location.href='home.html';">Back to Home Page</button>
+	<button onclick="location.href='home.php';">Back to Home Page</button>
 	<script type="text/javascript">
 		var look=function()
 		{
@@ -55,8 +58,6 @@
 						if(txtVal.toLowerCase().indexOf(str)==0)
 						{
 							rows[i].style.display="";
-							console.log(txtVal);
-							console.log(str);
 						}
 						else
 						{
@@ -66,7 +67,23 @@
 			}
 			
 		}
-		
+		var goback=function()
+		{
+			window.history.back();
+		}
+		var checkhist=function()
+		{
+			console.log("Inside checkhist()");
+			if(window.history=="localhost/modify.html")
+			{
+				console.log("Inside if");
+				document.getElementById('admin').style.display="";
+			}
+			else
+			{
+				document.getElementById('admin').style.display="none";
+			}
+		}
 	</script>
 </body>
 </html>

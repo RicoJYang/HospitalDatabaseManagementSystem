@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patient Admission Form</title>
+</head>
+<body>
+	<h1>Patient Admission Form</h1>
+	<form action="addpatient.php" method="post">
+		<p>ID: <input type="text" name="id"></p>
+		<p>Name: <input type="text" name="name"></p>
+		<p>Address: <input type="text" name="add"></p>
+		<p>Date of birth: <input type="date" name="dob"></p>
+		<p>Contact: <input type="text" name="contact"></p>
+		<p>Male <input type="radio" checked="checked" name="sex"></p>
+		<p>Female <input type="radio" name="sex"></p>
+		<p>AB+ <input type="radio" checked="checked" name="grp1">A+<input type="radio" name="grp1">B+<input type="radio" name="grp1">O+<input type="radio" name="grp1"></p>
+		<p>AB-<input type="radio" name="grp1">A-<input type="radio" name="grp1">B-<input type="radio" name="grp1">O-<input type="radio" name="grp1"></p>
+		<p>Room Assigned: <input type="text" name="roomassn"></p>
+		<input type="submit" name="submit" value="Submit">
+	</form>
+
+</body>
+</html>

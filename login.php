@@ -32,7 +32,7 @@
    		}
    		if(empty($username_err)&& empty($password_err))
    		{
-   			$sql="SELECT username, password FROM login where username=?";
+   			$sql="SELECT username, password FROM login WHERE username=?";
    			if($stmt=mysqli_prepare($con,$sql))
    			{
    				mysqli_stmt_bind_param($stmt,"s",$param_username);
@@ -51,7 +51,7 @@
    							{
    								//Password is correct, redirect to home page
                   echo "Login verified";
-   								header("Location: home.html");	
+   								header("Location: home.php");	
    							}
    							else
    							{

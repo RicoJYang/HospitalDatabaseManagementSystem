@@ -2,13 +2,83 @@
 <html>
 <head>
 	<title>Login</title>
+	<style type="text/css">
+		*:focus
+		{
+			outline: 0;
+		}
+		h1
+		{
+			font-size: 48px;
+			font-family: Calibri Light;
+			text-align: center;
+		}
+		#slidebg
+		{
+			width: 100%;
+			height: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+			backface-visibility: hidden;
+			animation: slideBg 32s linear infinite 0s;
+			animation-timing-function: ease-in-out;
+			background-image: url('back1.jpg');
+		}
+		@keyframes slideBg
+		{
+			0%
+			{
+				background-image: url('back1.jpg');
+			}
+			25%
+			{
+				background-image: url('back2.jpg');
+			}
+			50%
+			{
+				background-image: url('back3.jpg');
+			}
+			75%
+			{
+				background-image: url('back4.jpg');
+			}
+			100%
+			{
+				background-image: url('back5.jpg');
+			}
+		}
+		form
+		{
+			border-style: solid;
+			border-color: white;
+			border-radius: 10px;
+			display: inline-block; 
+		}
+		label
+		{
+			font-family: Calibri Light;
+			color: white;
+		}
+		#uname
+		{
+			border-radius: 25px;
+		}
+		#password
+		{
+			border-radius: 25px;
+		}
+	</style>
 </head>
+<div id="slidebg">
 <body>
+	
 	<h1>Login</h1>
 	<form action="login.php" method="post">
-		<label>Username:</label><input type="text" name="Username">
-		<p>Password: <input type="password" name="Password" id="password"></p>
+		<label>Username:</label><input type="text" id="uname" name="Username">
+		<p><label>Password:</label> <input type="password" name="Password" id="password"></p>
 		<p><input type="submit" name="Submit" value="Submit"></p>
 		<a href="signup.html">To Sign Up, Click Here</a>
+	</form>
 </body>
+</div>
 </html>
