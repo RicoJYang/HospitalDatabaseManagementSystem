@@ -1,4 +1,4 @@
-# HospitalDatabaseManagementSystem
+# Hospital Database Management System
 Database Management System for Hospitals. Utilizes PHP and MySQL, hosted on an Apache Web Server through Wampserver.
 1. To run the database, Download Wampserver for Windows (XAMPP for other platforms) and configure localhost (Mostly already configured as 
    default).
